@@ -79,18 +79,9 @@ JWT_SECRET=your_jwt_secret
 The `set_secrets_in_yml.sh` script will generate content that can be included in your GitHub Actions workflow YAML file like this:
 
 ```yaml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up secrets
-      run: |
-        echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
-        echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
-        echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> $GITHUB_ENV
+"DATABASE_URL=${{ secrets.DATABASE_URL }}"
+"API_KEY=${{ secrets.API_KEY }}"
+"JWT_SECRET=${{ secrets.JWT_SECRET }}"
 ```
 
 # License
